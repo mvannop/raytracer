@@ -1,0 +1,17 @@
+CC=g++
+CXX=$(CC)
+
+CPPFLAGS=-std=c++11
+CXXFLAGS=$(CPPFLAGS) -Ofast
+
+TARGET=rt
+
+SRC=rt.cc scene.cc image.cc rt1_renderer.cc tga.cc geometry.cc chrono.cc
+OBJ=rt.o scene.o image.o rt1_renderer.o tga.o geometry.o chrono.o
+
+$(TARGET):$(OBJ)
+
+clean:
+	rm -f *.o
+
+include makefile.deps
