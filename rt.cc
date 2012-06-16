@@ -18,12 +18,7 @@ int main(int argc, char* argv[])
   s.add_sphere({{0.5, 0, 1, 1}, {407, 290, 0}, 100});
   s.add_sphere({{0.5, 1, 0, 1}, {320, 140, 0}, 100});
 
-  image out(s.width(), s.height());
-
   rt1_renderer rt1;
-  rt1.render(s, out);
-
-  to_tga(out, "out.tga");
 
   qt_viewer qt(&s, &rt1);
   qt.run(argc, argv);
