@@ -2,12 +2,13 @@ CC=g++
 CXX=$(CC)
 
 CPPFLAGS=-std=c++11
-CXXFLAGS=$(CPPFLAGS) -Ofast
+CXXFLAGS=$(CPPFLAGS) -Ofast -I/usr/include/QtGui
+LDFLAGS=$(CXXFLAGS) -lQtCore -lQtGui
 
 TARGET=rt
 
-SRC=rt.cc scene.cc image.cc rt1_renderer.cc tga.cc geometry.cc chrono.cc
-OBJ=rt.o scene.o image.o rt1_renderer.o tga.o geometry.o chrono.o
+SRC=rt.cc scene.cc image.cc rt1_renderer.cc tga.cc geometry.cc chrono.cc qt_viewer.cc
+OBJ=rt.o scene.o image.o rt1_renderer.o tga.o geometry.o chrono.o qt_viewer.o
 
 $(TARGET):$(OBJ)
 

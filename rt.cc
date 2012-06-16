@@ -4,8 +4,9 @@
 #include "rt1_renderer.hh"
 #include "image.hh"
 #include "tga.hh"
+#include "qt_viewer.hh"
 
-int main(int argc, const char* argv[])
+int main(int argc, char* argv[])
 {
   scene s(640, 480);
 
@@ -23,4 +24,7 @@ int main(int argc, const char* argv[])
   rt1.render(s, out);
 
   to_tga(out, "out.tga");
+
+  qt_viewer qt(&s, &rt1);
+  qt.run(argc, argv);
 }
